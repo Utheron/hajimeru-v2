@@ -1,0 +1,10 @@
+FROM hajimeru-v2__base
+
+ENV NVM_VERSION v0.38.0
+ENV NODE_VERSION lts/erbium
+
+SHELL ["/bin/bash", "--login", "-i", "-c"]
+
+RUN sh -c "$(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh)"
+RUN source ~/.bashrc \
+    && nvm install ${NODE_VERSION}

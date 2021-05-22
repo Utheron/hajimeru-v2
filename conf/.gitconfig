@@ -1,0 +1,5 @@
+[user]
+	email = user@mail.com
+	name = awesome-user
+[push]
+	default = current

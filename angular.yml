@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+
+  app:
+    container_name: ${CONTAINER_NAME}__ng
+    build:
+      context: ./conf
+      dockerfile: angular.Dockerfile
+    ports:
+      - ${LOCAL_PORT}:4200
+      - ${TEST_PORT}:9876
+    volumes:
+      - ./html:/var/www/html
+    working_dir: /var/www/html
+    restart: unless-stopped
+    networks:
+      - hajimeru-v2
+
+networks:
+  hajimeru-v2:
