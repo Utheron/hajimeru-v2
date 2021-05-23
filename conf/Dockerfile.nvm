@@ -1,4 +1,4 @@
-FROM hajimeru-v2__base
+FROM hajimeru-v2/base:zsh
 
 ENV NVM_VERSION v0.38.0
 ENV NODE_VERSION lts/erbium

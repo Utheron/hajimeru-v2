@@ -1,6 +1,4 @@
-FROM hajimeru-v2__nvm
-
-WORKDIR /var/www
+FROM hajimeru-v2/nvm:0.38.0
 
 EXPOSE 4200 9876
 
