@@ -17,5 +17,32 @@ services:
     networks:
       - laravel
 
+  db:
+    container_name: ${CONTAINER_NAME}__db
+    image: mysql:5.7
+    ports:
+      - ${DB_PORT}:80
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PWD}
+      MYSQL_DATABASE: ${DB_NAME}
+    restart: unless-stopped
+    networks:
+      - laravel
+
+  phpmyadmin:
+    container_name: ${CONTAINER_NAME}__pma
+    image: phpmyadmin/phpmyadmin:5.1
+    ports:
+      - ${PMA_PORT}:80
+    environment:
+      PMA_HOST: ${DB_HOST}
+      PMA_USER: ${DB_USER}
+      PMA_PASSWORD: ${DB_ROOT_PWD}
+    restart: unless-stopped
+    networks:
+      - laravel
+
 networks:
   laravel:
