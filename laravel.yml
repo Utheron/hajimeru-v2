@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+
+  app:
+    container_name: ${CONTAINER_NAME}__lr
+    build:
+      context: ./conf
+      dockerfile: laravel.Dockerfile
+    image: ${CONTAINER_NAME}__image
+    ports:
+      - ${LOCAL_PORT}:8000
+    volumes:
+      - ./html:/var/www/html
+      - ./conf/httpd.conf:/etc/apache2/sites-available/000-default.conf
+    working_dir: /var/www/html
+    restart: unless-stopped
+    networks:
+      - laravel
+
+networks:
+  laravel:
