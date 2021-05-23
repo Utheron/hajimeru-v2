@@ -6,6 +6,7 @@ services:
     build:
       context: ./conf
       dockerfile: angular.Dockerfile
+    image: ${CONTAINER_NAME}__image
     ports:
       - ${LOCAL_PORT}:4200
       - ${TEST_PORT}:9876
@@ -14,7 +15,7 @@ services:
     working_dir: /var/www/html
     restart: unless-stopped
     networks:
-      - hajimeru-v2
+      - angular-app
 
 networks:
-  hajimeru-v2:
+  angular-app:
