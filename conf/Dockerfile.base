@@ -9,5 +9,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
     && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-ADD .zshrc /root/.zshrc
+ADD .base.zshrc /root/.zshrc
 ADD af-magic.zsh-theme /root/.oh-my-zsh/themes/af-magic.zsh-theme
