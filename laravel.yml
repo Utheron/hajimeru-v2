@@ -1,12 +1,12 @@
 version: "3.9"
 services:
 
-  app:
+  app_lr:
     container_name: ${CONTAINER_NAME}__lr
     build:
       context: ./conf
       dockerfile: laravel.Dockerfile
-    image: ${CONTAINER_NAME}__image
+    image: ${CONTAINER_NAME}__lr
     ports:
       - ${LOCAL_PORT}:8000
     volumes:

@@ -1,12 +1,12 @@
 version: "3.9"
 services:
 
-  app:
+  app_ng:
     container_name: ${CONTAINER_NAME}__ng
     build:
       context: ./conf
       dockerfile: angular.Dockerfile
-    image: ${CONTAINER_NAME}__image
+    image: ${CONTAINER_NAME}__ng
     ports:
       - ${LOCAL_PORT}:4200
       - ${TEST_PORT}:9876
