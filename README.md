@@ -1,10 +1,11 @@
 # HAJIMERU-V2
----
+
 Hajimeru means "to begin" and it's kind of what we're going for with this solution.
 
 This is a collection of Docker stacks that I mainly use for personal projects. Available "as is", those stacks were not fully tested. I have yet to face any major problem that I can't solve myself AKA this is not production ready. The main purpose is to gain some knowledge about Docker and how to set up a working environment.
 
 # .ENV FILE
+
 ```
 CONTAINER_NAME=
 ```
@@ -82,6 +83,7 @@ docker container exec -it hajimeru-v2__lr zsh
 ```
 
 # NAMING CONVENTION
+
 ```
 ${CONTAINER_NAME}__ng  = Angular
 ${CONTAINER_NAME}__lr  = Laravel
