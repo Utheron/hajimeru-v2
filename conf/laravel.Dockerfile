@@ -1,4 +1,4 @@
-FROM hajimeru-v2/base-php:7.2-apache
+FROM hajimeru-v2/base-php:7.3-apache
 
 EXPOSE 8000 8001
 

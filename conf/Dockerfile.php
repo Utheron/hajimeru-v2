@@ -1,4 +1,4 @@
-FROM php:7.2-apache AS base
+FROM php:7.3-apache AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git zsh vim zip unzip \
